@@ -94,7 +94,7 @@ export default function Dashboard() {
                                                         <Card.Footer>
                                                             {
                                                                 
-                                                                <><small className="text-muted">UnLike </small><SuitHeartFill onClick={() => { handleUnLike(val)}} style={{cursor:"pointer"}}/></>
+                                                                <><small className="text-muted"> </small><SuitHeartFill onClick={() => { handleUnLike(val)}} style={{cursor:"pointer",color:"red"}}/></>
                                                                 
                                                             }
                                                             

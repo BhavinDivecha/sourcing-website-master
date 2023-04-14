@@ -168,7 +168,7 @@ export default function Dashboard() {
                                                         Our skills matching feature gives you leverage over competitors to find best
                                                         matched talent for your
                                                         recruiting needs. </p> {/* Features */}
-                                                        <p> <a href="login/login_page.html" className="sw-font-size-xl sw-text-color-2e7ef9 sw-font-family-default sw-font-weight-medium sw-margin-top-none sw-margin-bottom-3xs sw-letter-spacing-normal sw-text-decoration-no-underline hover:sw-text-decoration-no-underline sw-display-inline-block">
+                                                        <p> <a href="/login" className="sw-font-size-xl sw-text-color-2e7ef9 sw-font-family-default sw-font-weight-medium sw-margin-top-none sw-margin-bottom-3xs sw-letter-spacing-normal sw-text-decoration-no-underline hover:sw-text-decoration-no-underline sw-display-inline-block">
                                                             Discover Feature <i className="fa fa-fw fa-arrow-right ml-2" /> </a> </p>
                                                     </div>
                                                     <div className="col-lg-6 text-center"> <img src="assets/images/featureimg.png" className="sw-percentage-width-full sw-border-style-none sw-border-width-xs sw-border-color-000000 sw-border-radius-none  mx-auto d-block" alt="Our awesome features" /> </div>
@@ -239,7 +239,7 @@ export default function Dashboard() {
                                     Start connecting with top talent today. Strengthen your capabilities with Sourcign. </h5>
                                     <br />
                                     <div className="d-flex justify-content-center flex-wrap border-first-button"> 
-                                    <a data-element="button" target className="sw-font-size-xl sw-text-color-default sw-font-family-aboreto sw-font-weight-extrabold sw-border-radius-default sw-background-color-b22ef9 sw-padding-left-l sw-padding-right-l sw-padding-top-5xs sw-padding-bottom-5xs sw-border-style-solid sw-border-width-xs sw-border-color-000000 sw-letter-spacing-normal sw-text-decoration-no-underline hover:sw-text-decoration-no-underline hover:sw-box-shadow-m sw-margin-bottom-6xs sw-display-inline-block sw-margin-left-7xs sw-margin-right-7xs" href="login/login_page.html"> Try it now! </a> 
+                                    <a data-element="button" target className="sw-font-size-xl sw-text-color-default sw-font-family-aboreto sw-font-weight-extrabold sw-border-radius-default sw-background-color-b22ef9 sw-padding-left-l sw-padding-right-l sw-padding-top-5xs sw-padding-bottom-5xs sw-border-style-solid sw-border-width-xs sw-border-color-000000 sw-letter-spacing-normal sw-text-decoration-no-underline hover:sw-text-decoration-no-underline hover:sw-box-shadow-m sw-margin-bottom-6xs sw-display-inline-block sw-margin-left-7xs sw-margin-right-7xs" href="/login"> Try it now! </a> 
                                     </div>
                                 </div>
                                 </div>

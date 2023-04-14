@@ -40,11 +40,13 @@ export default function Navbar() {
                         (
                             <>
                                 <li><a href="/search" className={router.pathname == "/search" ? 'active' : ''}>Search</a></li>
+                                <li><a href="/liked-candidates" className={router.pathname == "/liked-candidates" ? 'active' : ''}>Liked Candidates</a></li>
                                 <li>
                                     <div className="border-first-button">
                                     <a onClick={handleLogout} style={{cursor:"pointer"}}>logout</a>
                                     </div>
                                 </li>
+
                             </>
                         ):
                         (
