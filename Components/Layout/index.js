@@ -1,6 +1,6 @@
 // import custom components
 import Footer from "./footer";
-import Header from "./Header";
+// import Header from "./Header";
 import Navbar from './navbar'
 
 export default function Layout({ children }) {
