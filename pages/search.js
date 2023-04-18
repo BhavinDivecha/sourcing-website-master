@@ -8,9 +8,9 @@ import Form from 'react-bootstrap/Form';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import { search, likeCandidate, getCandidates, removeCandidate, getNextCandidates } from '../api';
-import { SuitHeart, SuitHeartFill } from 'react-bootstrap-icons';
+import { HandThumbsUp, HandThumbsUpFill } from 'react-bootstrap-icons';
 import Spinner from 'react-bootstrap/Spinner';
-
+import Accordion from 'react-bootstrap/Accordion';
 
 export default function Dashboard() {
 
@@ -336,18 +336,21 @@ export default function Dashboard() {
                                                                     <Card.Text>
                                                                         {val.snippet}
                                                                     </Card.Text>
-                                                                    <Link href={val.link} target="_blank" style={{color:"#D285BD"}}>{val.link}</Link>
+                                                                    {/* <Link href={val.link} target="_blank" style={{color:"#D285BD"}}>{val.link}</Link> */}
                                                                 </Card.Body>
                                                                 <Card.Footer>
                                                                     {
                                                                         val.isLiked == true ?
                                                                         (
-                                                                            <><small className="text-muted"> </small><SuitHeartFill onClick={() => { handleUnLike(val)}} style={{cursor:"pointer",color:"red"}}/></>
+                                                                            <><small className="text-muted"> </small><HandThumbsUp onClick={() => { handleUnLike(val)}} style={{cursor:"pointer",color:"#D285BD"}}/></>
                                                                         ) :
                                                                         (
-                                                                            <><small className="text-muted"> </small><SuitHeart onClick={() => { handleLike(val)}} style={{cursor:"pointer",color:"red"}}/></>
+                                                                            <><small className="text-muted"> </small><HandThumbsUpFill onClick={() => { handleLike(val)}} style={{cursor:"pointer",color:"#D285BD"}}/></>
                                                                         )
                                                                     }
+                                                                    <Link href={val.link} target="_blank" style={{color:"#D285BD",float:"right"}}>
+                                                                        <Button style={{backgroundColor:"#D285BD",borderColor:"#D285BD"}}> LinkeIn</Button>
+                                                                    </Link>
                                                                     
                                                                 </Card.Footer>
                                                             </Card>

@@ -8,7 +8,7 @@ import Form from 'react-bootstrap/Form';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import { search, likeCandidate, getCandidates, removeCandidate } from '../api';
-import { SuitHeart, SuitHeartFill } from 'react-bootstrap-icons';
+import { BsHandThumbsUp, HandThumbsUpFill } from 'react-bootstrap-icons';
 
 
 export default function Dashboard() {
@@ -89,12 +89,16 @@ export default function Dashboard() {
                                                             <Card.Text>
                                                                 {val.snippet}
                                                             </Card.Text>
-                                                            <Link href={val.link} target="_blank" style={{color:"#D285BD"}}>{val.link}</Link>
                                                         </Card.Body>
                                                         <Card.Footer>
                                                             {
                                                                 
-                                                                <><small className="text-muted"> </small><SuitHeartFill onClick={() => { handleUnLike(val)}} style={{cursor:"pointer",color:"red"}}/></>
+                                                                <>
+                                                                <small className="text-muted"> </small><HandThumbsUpFill onClick={() => { handleUnLike(val)}} style={{cursor:"pointer",color:"#D285BD"}}/>
+                                                                <Link href={val.link} target="_blank" style={{color:"#D285BD",float:"right"}}>
+                                                                    <Button style={{backgroundColor:"#D285BD",borderColor:"#D285BD"}}> LinkeIn</Button>
+                                                                </Link>
+                                                                </>
                                                                 
                                                             }
                                                             
