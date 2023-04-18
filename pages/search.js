@@ -342,10 +342,10 @@ export default function Dashboard() {
                                                                     {
                                                                         val.isLiked == true ?
                                                                         (
-                                                                            <><small className="text-muted"> </small><HandThumbsUp onClick={() => { handleUnLike(val)}} style={{cursor:"pointer",color:"#D285BD"}}/></>
+                                                                            <><small className="text-muted"> </small><HandThumbsUpFill onClick={() => { handleUnLike(val)}} style={{cursor:"pointer",color:"#D285BD"}}/></>
                                                                         ) :
                                                                         (
-                                                                            <><small className="text-muted"> </small><HandThumbsUpFill onClick={() => { handleLike(val)}} style={{cursor:"pointer",color:"#D285BD"}}/></>
+                                                                            <><small className="text-muted"> </small><HandThumbsUp onClick={() => { handleLike(val)}} style={{cursor:"pointer",color:"#D285BD"}}/></>
                                                                         )
                                                                     }
                                                                     <Link href={val.link} target="_blank" style={{color:"#D285BD",float:"right"}}>
