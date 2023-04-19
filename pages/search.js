@@ -27,6 +27,7 @@ export default function Dashboard() {
 
     const [likedCandidates, setLikedCandidates] = useState([]);
     const [validated, setValidated] = useState(false);
+    const [currentPage, setCurrentPage] = useState(1);
 
     const handleLike = async (candidate) => {
         console.log(candidate);
@@ -110,8 +111,10 @@ export default function Dashboard() {
             await search(values).then(function (res) {
                 if (res && res.status == 200) {
                     console.log(res.data.response.organic_results);
-                    // setResult(res.data.response);
-                    setSerpApiPagination(res.data.response.serpapi_pagination);
+                    setResult(res.data.response);
+                    if(res.data.response.pagination != undefined){
+                        setSerpApiPagination(res.data.response.pagination.api_pagination);
+                    }
 
                     let afterLikedCandidates = [];
                     res.data.response && res.data.response &&  res.data.response.organic_results.length > 0 && res.data.response.organic_results.map((r) => {
@@ -139,13 +142,19 @@ export default function Dashboard() {
 
     const handleNext = async() => {
         setIsLoaded(true);
-        console.log(serpapiPagination.next.replace("https://serpapi.com/search.json", ""));
+        
 
-        await getNextCandidates(serpapiPagination.next.replace("https://serpapi.com/search.json", "")).then(function (res) {
+        const url = new URL(serpapiPagination.next);
+        
+        const searchParams = url.searchParams;
+        setCurrentPage(searchParams.get('page'))
+        await getNextCandidates(`?q=${searchParams.get('q')}&id=${searchParams.get('id')}&page=${searchParams.get('page') }`).then(function (res) {
             if (res && res.status == 200) {
                 console.log(res.data.response.organic_results);
-                // setResult(res.data.response);
-                setSerpApiPagination(res.data.response.serpapi_pagination);
+                setResult(res.data.response);
+                if(res.data.response.pagination != undefined){
+                    setSerpApiPagination(res.data.response.pagination.api_pagination);
+                }
 
                 let afterLikedCandidates = [];
                 res.data.response && res.data.response &&  res.data.response.organic_results.length > 0 && res.data.response.organic_results.map((r) => {
@@ -171,13 +180,17 @@ export default function Dashboard() {
 
     const handlePrev = async() => {
         setIsLoaded(true);
-        console.log(serpapiPagination.previous.replace("https://serpapi.com/search.json", ""));
+        const url = new URL(serpapiPagination.next);
+        const searchParams = url.searchParams;
+        setCurrentPage(searchParams.get('page') - 2)
 
-        await getNextCandidates(serpapiPagination.previous.replace("https://serpapi.com/search.json", "")).then(function (res) {
+        await getNextCandidates(`?q=${searchParams.get('q')}&id=${searchParams.get('id')}&page=${searchParams.get('page') - 2 }`).then(function (res) {
             if (res && res.status == 200) {
                 console.log(res.data.response.organic_results);
                 // setResult(res.data.response);
-                setSerpApiPagination(res.data.response.serpapi_pagination);
+                if(res.data.response.pagination != undefined){
+                    setSerpApiPagination(res.data.response.pagination.api_pagination);
+                }
 
                 let afterLikedCandidates = [];
                 res.data.response && res.data.response &&  res.data.response.organic_results.length > 0 && res.data.response.organic_results.map((r) => {
@@ -360,26 +373,33 @@ export default function Dashboard() {
                                                 }
                                             </Row>
                                             <Row style={{marginTop:"10px"}}>
+                                                {console.log(Object.values(serpapiPagination))}
                                                 {
-                                                    serpapiPagination && serpapiPagination.previous == undefined ?
+                                                    serpapiPagination && Object.keys(serpapiPagination).length > 0 ?
                                                     (
-                                                        <>
-                                                            
-                                                            <Col md={{span:2, offset:10}}>
-                                                                <Button type="submit" className='col-md-8' style={{ backgroundColor: "#D285BD", border: 0 }} onClick={handleNext}>Next</Button>
-                                                            </Col>
-                                                        </>
-                                                    ) :
-                                                    (
-                                                        <>
-                                                            <Col md={{span:2}}>
-                                                                <Button type="submit" className='col-md-8' style={{ backgroundColor: "#D285BD", border: 0 }} onClick={handlePrev}>Prev</Button>
-                                                            </Col>
-                                                            <Col md={{span:2, offset:8}}>
-                                                                <Button type="submit" className='col-md-8' style={{ backgroundColor: "#D285BD", border: 0 }} onClick={handleNext}>Next</Button>
-                                                            </Col>
-                                                        </>
-                                                    )
+                                                        
+                                                        currentPage == 1 ?
+                                                        (
+                                                            <>
+                                                                
+                                                                <Col md={{span:2, offset:10}}>
+                                                                    <Button type="submit" className='col-md-8' style={{ backgroundColor: "#D285BD", border: 0 }} onClick={handleNext}>Next</Button>
+                                                                </Col>
+                                                            </>
+                                                        ) :
+                                                        (
+                                                            <>
+                                                                <Col md={{span:2}}>
+                                                                    <Button type="submit" className='col-md-8' style={{ backgroundColor: "#D285BD", border: 0 }} onClick={handlePrev}>Prev</Button>
+                                                                </Col>
+                                                                <Col md={{span:2, offset:8}}>
+                                                                    <Button type="submit" className='col-md-8' style={{ backgroundColor: "#D285BD", border: 0 }} onClick={handleNext}>Next</Button>
+                                                                </Col>
+                                                            </>
+                                                        )
+
+                                                        
+                                                    ) : null
                                                 }
                                                 
                                             </Row>
