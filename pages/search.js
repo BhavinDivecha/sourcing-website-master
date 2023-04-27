@@ -117,7 +117,7 @@ export default function Dashboard() {
                     }
 
                     let afterLikedCandidates = [];
-                    res.data.response && res.data.response &&  res.data.response.organic_results.length > 0 && res.data.response.organic_results.map((r) => {
+                    res.data.response && res.data.response && res.data.response.organic_results && res.data.response.organic_results.length > 0 && res.data.response.organic_results.map((r) => {
                         if(likedCandidates.find(( candi ) => candi.title === r.title)){
                             console.log(r)
                             r.isLiked = true;
@@ -131,7 +131,12 @@ export default function Dashboard() {
 
                 } else {
                     console.log(res);
-                    setSearchError(res.data.error);
+                    if(res == undefined){
+                        setSearchError("Something Went Wrong");
+                    }
+                    else{
+                        setSearchError(res.data.error);
+                    }
                     setIsLoaded(false);
 
                 }
@@ -157,7 +162,7 @@ export default function Dashboard() {
                 }
 
                 let afterLikedCandidates = [];
-                res.data.response && res.data.response &&  res.data.response.organic_results.length > 0 && res.data.response.organic_results.map((r) => {
+                res.data.response && res.data.response && res.data.response.organic_results && res.data.response.organic_results.length > 0 && res.data.response.organic_results.map((r) => {
                     if(likedCandidates.find(( candi ) => candi.title === r.title)){
                         console.log(r)
                         r.isLiked = true;
@@ -172,7 +177,12 @@ export default function Dashboard() {
             } else {
                 console.log(res);
                 setIsLoaded(false);
-                setSearchError(res.data.error);
+                if(res == undefined){
+                    setSearchError("Something Went Wrong");
+                }
+                else{
+                    setSearchError(res.data.error);
+                }
 
             }
         })
@@ -193,7 +203,7 @@ export default function Dashboard() {
                 }
 
                 let afterLikedCandidates = [];
-                res.data.response && res.data.response &&  res.data.response.organic_results.length > 0 && res.data.response.organic_results.map((r) => {
+                res.data.response && res.data.response && res.data.response.organic_results && res.data.response.organic_results.length > 0 && res.data.response.organic_results.map((r) => {
                     if(likedCandidates.find(( candi ) => candi.title === r.title)){
                         console.log(r)
                         r.isLiked = true;
@@ -207,7 +217,12 @@ export default function Dashboard() {
 
             } else {
                 console.log(res);
-                setSearchError(res.data.error);
+                if(res == undefined){
+                    setSearchError("Something Went Wrong");
+                }
+                else{
+                    setSearchError(res.data.error);
+                }
                 setIsLoaded(false);
 
             }
@@ -407,12 +422,26 @@ export default function Dashboard() {
                                     </div>
                                 </div>
                             </div>
-                        ) : (null)
+                        ) : (
+                            <div id="services" className="services section">
+                                <div className="container">
+                                    <div className="row">
+                                        <Card style={{paddingBottom:"20px"}}>
+                                            <div class="section-heading  wow fadeInDown" data-wow-duration="1s" data-wow-delay="0.5s" style={{marginTop:"20px"}}>
+                                                        <h4 id="">0 <em>Candidates</em></h4>
+                                                        
+                                            </div>
+                                        </Card>
+                                    </div>
+                                </div>
+                            </div>
+                        )
                     }
                 </Layout>
             ) :
             (
                 <>
+
                 <div style={{width: "100px",height: "100px",position: "absolute",top:"0",bottom: "0",left: "0",right: "0",margin: "auto"}}>
                     
                         <Button style={{backgroundColor:"#D285BD",borderColor:"#D285BD"}} disabled>
