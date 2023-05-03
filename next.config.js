@@ -5,6 +5,6 @@ const nextConfig = {
     protocol: 'http://',
     baseUrl: '43.204.14.1:3001/'
   },
-
+}
 
 module.exports = nextConfig
