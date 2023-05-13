@@ -34,7 +34,7 @@ export default function Navbar() {
                 <div className="col-12">
                 <nav className="main-nav" >
                     
-                    <img className="logo" src="/assets/images/sourcign_logo.jfif" alt=""/>
+                    <img className="logo" src="/assets/images/sourcing-logo.jpeg" alt="" style={{marginTop:"20px"}}/>
                     <ul className="nav" style={showSideBar ? {display:"block",backgroundColor:"white"} : {display:"none",backgroundColor:"white"}}>
                     <li className="scroll-to-section"><a href="/#top" className={router.pathname == "/" ? 'active' : ''}>Home</a></li>
                     <li className="scroll-to-section"><a href="/#about">About</a></li>

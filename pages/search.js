@@ -275,7 +275,7 @@ export default function Dashboard() {
                                                     <Card.Body>
                                                         <Row>
                                                             <Col md={6}>
-                                                                <img src="/assets/images/contactimg.png" frameborder="0" style={{ "border": "0", width: "90%" }} allowfullscreen="" />
+                                                                <img src="/assets/images/about-dec-v3.png" frameborder="0" style={{ "border": "0", width: "90%" }} allowfullscreen="" />
                                                             </Col>
                                                             <Col md={6}>
                                                                 <Form noValidate validated={validated} onSubmit={handleSearch}>
@@ -322,7 +322,7 @@ export default function Dashboard() {
                                                                             <p className='alert-error'> {searchError} </p>
                                                                         </Col>
                                                                         <Col md={{ span: 8, offset: 3 }}>
-                                                                            <Button type="submit" className='col-md-8' style={{ backgroundColor: "#D285BD", border: 0 }} >Search</Button>
+                                                                            <Button type="submit" className='col-md-8' style={{ backgroundColor: "#47B5EC", border: 0 }} >Search</Button>
                                                                         </Col>
                                                                     </Row>
                                                                 </Form>
@@ -364,20 +364,20 @@ export default function Dashboard() {
                                                                     <Card.Text>
                                                                         {val.snippet}
                                                                     </Card.Text>
-                                                                    {/* <Link href={val.link} target="_blank" style={{color:"#D285BD"}}>{val.link}</Link> */}
+                                                                    {/* <Link href={val.link} target="_blank" style={{color:"#47B5EC"}}>{val.link}</Link> */}
                                                                 </Card.Body>
                                                                 <Card.Footer>
                                                                     {
                                                                         val.isLiked == true ?
                                                                         (
-                                                                            <><small className="text-muted"> </small><HandThumbsUpFill onClick={() => { handleUnLike(val)}} style={{cursor:"pointer",color:"#D285BD"}}/></>
+                                                                            <><small className="text-muted"> </small><HandThumbsUpFill onClick={() => { handleUnLike(val)}} style={{cursor:"pointer",color:"#47B5EC"}}/></>
                                                                         ) :
                                                                         (
-                                                                            <><small className="text-muted"> </small><HandThumbsUp onClick={() => { handleLike(val)}} style={{cursor:"pointer",color:"#D285BD"}}/></>
+                                                                            <><small className="text-muted"> </small><HandThumbsUp onClick={() => { handleLike(val)}} style={{cursor:"pointer",color:"#47B5EC"}}/></>
                                                                         )
                                                                     }
-                                                                    <Link href={val.link} target="_blank" style={{color:"#D285BD",float:"right"}}>
-                                                                        <Button style={{backgroundColor:"#D285BD",borderColor:"#D285BD"}}> LinkedIn</Button>
+                                                                    <Link href={val.link} target="_blank" style={{color:"#47B5EC",float:"right"}}>
+                                                                        <Button style={{backgroundColor:"#47B5EC",borderColor:"#47B5EC"}}> LinkedIn</Button>
                                                                     </Link>
                                                                     
                                                                 </Card.Footer>
@@ -398,17 +398,17 @@ export default function Dashboard() {
                                                             <>
                                                                 
                                                                 <Col md={{span:2, offset:10}}>
-                                                                    <Button type="submit" className='col-md-8' style={{ backgroundColor: "#D285BD", border: 0 }} onClick={handleNext}>Next</Button>
+                                                                    <Button type="submit" className='col-md-8' style={{ backgroundColor: "#47B5EC", border: 0 }} onClick={handleNext}>Next</Button>
                                                                 </Col>
                                                             </>
                                                         ) :
                                                         (
                                                             <>
                                                                 <Col md={{span:2}}>
-                                                                    <Button type="submit" className='col-md-8' style={{ backgroundColor: "#D285BD", border: 0 }} onClick={handlePrev}>Prev</Button>
+                                                                    <Button type="submit" className='col-md-8' style={{ backgroundColor: "#47B5EC", border: 0 }} onClick={handlePrev}>Prev</Button>
                                                                 </Col>
                                                                 <Col md={{span:2, offset:8}}>
-                                                                    <Button type="submit" className='col-md-8' style={{ backgroundColor: "#D285BD", border: 0 }} onClick={handleNext}>Next</Button>
+                                                                    <Button type="submit" className='col-md-8' style={{ backgroundColor: "#47B5EC", border: 0 }} onClick={handleNext}>Next</Button>
                                                                 </Col>
                                                             </>
                                                         )
@@ -444,7 +444,7 @@ export default function Dashboard() {
 
                 <div style={{width: "100px",height: "100px",position: "absolute",top:"0",bottom: "0",left: "0",right: "0",margin: "auto"}}>
                     
-                        <Button style={{backgroundColor:"#D285BD",borderColor:"#D285BD"}} disabled>
+                        <Button style={{backgroundColor:"#47B5EC",borderColor:"#47B5EC"}} disabled>
                             <Spinner
                             as="span"
                             animation="grow"

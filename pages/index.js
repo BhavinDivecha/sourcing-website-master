@@ -49,7 +49,7 @@ export default function Dashboard() {
                         <div className="row">
                             <div className="col-lg-6">
                             <div className="about-left-image  wow fadeInLeft" data-wow-duration="1s" data-wow-delay="0.5s">
-                                <img src="assets/images/about-dec.png" alt />
+                                <img src="assets/images/about-dec-v3.png" alt />
                             </div>
                             </div>
                             <div className="col-lg-6 align-self-center  wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.5s">
@@ -265,7 +265,7 @@ export default function Dashboard() {
                             <div className="row">
                             <div className="col-lg-12">
                                 <div className="contact-dec">
-                                <img src="assets/images/contact-dec.png" alt />
+                                <img src="assets/images/contact-dec-v3.png" alt />
                                 </div>
                             </div>
                             <div className="col-lg-5">
@@ -319,7 +319,7 @@ export default function Dashboard() {
                                     <div className="col-lg-12">
                                     <fieldset>
                                         
-                                        <Button className='col-md-8' id="form-submit" type="submit" style={{backgroundColor:"#D285BD",border:0}}>Send Message Now</Button>
+                                        <Button className='col-md-8' id="form-submit" type="submit" style={{backgroundColor:"#47B5EC",border:0}}>Send Message Now</Button>
                                     </fieldset>
                                     </div>
                                 </div>

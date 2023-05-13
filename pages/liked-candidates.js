@@ -94,9 +94,9 @@ export default function Dashboard() {
                                                             {
                                                                 
                                                                 <>
-                                                                <small className="text-muted"> </small><HandThumbsUpFill onClick={() => { handleUnLike(val)}} style={{cursor:"pointer",color:"#D285BD"}}/>
-                                                                <Link href={val.link} target="_blank" style={{color:"#D285BD",float:"right"}}>
-                                                                    <Button style={{backgroundColor:"#D285BD",borderColor:"#D285BD"}}> LinkedIn</Button>
+                                                                <small className="text-muted"> </small><HandThumbsUpFill onClick={() => { handleUnLike(val)}} style={{cursor:"pointer",color:"#47B5EC"}}/>
+                                                                <Link href={val.link} target="_blank" style={{color:"#47B5EC",float:"right"}}>
+                                                                    <Button style={{backgroundColor:"#47B5EC",borderColor:"#47B5EC"}}> LinkedIn</Button>
                                                                 </Link>
                                                                 </>
                                                                 
